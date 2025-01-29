@@ -11,9 +11,21 @@ public class RPSSymbol : MonoBehaviour
     [SerializeField]
     private Material[] materials;
 
+    [SerializeField]
+    private int livesCount = 1;
+
     void Start()
     {
         ChangeSymbol(GenerateSymbol(true));
+    }
+
+    public void TakeDamage()
+    {
+        livesCount--;
+        if(livesCount <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void ChangeSymbolToRandom()

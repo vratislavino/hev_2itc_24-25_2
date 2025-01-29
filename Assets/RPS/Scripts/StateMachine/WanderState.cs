@@ -55,6 +55,10 @@ public class WanderState : State
         {
             var enemySymbol = symbols.First();
             var wouldWin = mySymbol.CurrentSymbol.WouldWin(enemySymbol.CurrentSymbol);
+
+            if (wouldWin == null)
+                return this;
+
             if(wouldWin.Value)
                 return new AggroState(agent, enemySymbol);
             else 
