@@ -3,6 +3,7 @@ using UnityEngine;
 public class RPSSymbol : MonoBehaviour
 {
     private Symbol currentSymbol;
+    public Symbol CurrentSymbol => currentSymbol;
 
     [SerializeField]
     private MeshRenderer symbolRenderer;

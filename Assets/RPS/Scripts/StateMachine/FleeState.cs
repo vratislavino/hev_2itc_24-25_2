@@ -4,9 +4,12 @@ using UnityEngine.AI;
 
 public class FleeState : State
 {
-    public FleeState(NavMeshAgent agent) : base(agent)
+    private RPSSymbol target;
+    public FleeState(NavMeshAgent agent, RPSSymbol target) : base(agent)
     {
-    }
+        this.target = target;
+        this.agent.speed = 8f;
+        }
 
     public override void UpdateState()
     {
