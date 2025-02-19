@@ -12,7 +12,13 @@ public abstract class RangedWeapon : Weapon
     [SerializeField]
     private Transform shootPoint;
 
-    public override void Attack()
+    protected virtual void Start()
+    {
+        InputFunction = Input.GetButtonDown;
+        ammo = maxAmmo;        
+    }
+
+    protected override void DoAttack()
     {
         if (ammo > 0)
             Shoot();
@@ -27,7 +33,8 @@ public abstract class RangedWeapon : Weapon
     protected virtual void SpawnProjectile()
     {
         var projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
-        projectile.AddForce(projectile.transform.forward * 1000);
+        projectile.AddForce(projectile.transform.forward * 1, ForceMode.Impulse);
+        Destroy(projectile.gameObject, 4f);
     }
 
 }

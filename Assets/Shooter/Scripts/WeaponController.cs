@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    Weapon currentWeapon;
+
     void Start()
     {
-        
+        currentWeapon = GetComponentInChildren<Weapon>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (currentWeapon.InputFunction("Fire1"))
+            currentWeapon.Attack();
     }
 }

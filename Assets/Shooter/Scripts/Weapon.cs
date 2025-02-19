@@ -1,6 +1,26 @@
+using System;
 using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    public abstract void Attack();
+    public Func<string, bool> InputFunction;
+
+    private float fireRate = 0.2f;
+    private float currentRate = 0f;
+
+    public void Attack()
+    {
+        if(currentRate <= 0)
+        {
+            DoAttack();
+            currentRate = fireRate;
+        }
+    }
+
+    private void Update()
+    {
+        currentRate -= Time.deltaTime;
+    }
+
+    protected abstract void DoAttack();
 }
