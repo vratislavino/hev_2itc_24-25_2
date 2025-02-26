@@ -1,16 +1,24 @@
 using UnityEngine;
 
-public class Shotgun : MonoBehaviour
+public class Shotgun : RangedWeapon
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private int pellets;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    private float spread;
+
+    protected override void SpawnProjectile()
     {
-        
+        for(int i = 0; i < pellets; i++)
+        {
+            var projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
+
+            var rand = Random.insideUnitSphere;
+            var dir = shootPoint.forward + rand * spread;
+
+            projectile.AddForce(dir, ForceMode.Impulse);
+            Destroy(projectile.gameObject, 4f);
+        }
     }
 }

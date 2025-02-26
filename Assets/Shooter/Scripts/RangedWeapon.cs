@@ -7,10 +7,10 @@ public abstract class RangedWeapon : Weapon
     protected int maxAmmo;
 
     [SerializeField]
-    private Rigidbody projectilePrefab;
+    protected Rigidbody projectilePrefab;
 
     [SerializeField]
-    private Transform shootPoint;
+    protected Transform shootPoint;
 
     protected virtual void Start()
     {
