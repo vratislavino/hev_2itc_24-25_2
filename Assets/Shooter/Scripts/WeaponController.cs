@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
+    public event Action<Weapon, Weapon> WeaponChanged;
+
     Weapon currentWeapon;
+    public Weapon CurrentWeapon => currentWeapon;
+
     List<Weapon> weapons;
     void Start()
     {
@@ -16,11 +20,15 @@ public class WeaponController : MonoBehaviour
 
     private void SelectWeapon(Weapon weapon)
     {
-        if(currentWeapon != null)
+        Weapon previousWeapon = currentWeapon;
+
+        if (currentWeapon != null)
             currentWeapon.gameObject.SetActive(false);
 
         currentWeapon = weapon;
         currentWeapon.gameObject.SetActive(true);
+
+        WeaponChanged?.Invoke(previousWeapon, currentWeapon);
     }
 
     void Update()

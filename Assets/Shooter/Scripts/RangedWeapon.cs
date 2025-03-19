@@ -6,6 +6,9 @@ public abstract class RangedWeapon : Weapon
     [SerializeField]
     protected int maxAmmo;
 
+    public override int CurrentAmmo => ammo;
+    public override int MaxAmmo => maxAmmo;
+
     [SerializeField]
     protected Rigidbody projectilePrefab;
 
