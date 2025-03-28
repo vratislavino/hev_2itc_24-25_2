@@ -4,7 +4,7 @@ public class Smg : RangedWeapon
 {
     protected override void Start()
     {
-        ammo = maxAmmo;
+        ChangeAmmo(maxAmmo);
         InputFunction = Input.GetButton;
     }
 }

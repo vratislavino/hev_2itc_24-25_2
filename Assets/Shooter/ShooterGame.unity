@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 6059591}
   - component: {fileID: 6059590}
   - component: {fileID: 6059589}
+  - component: {fileID: 6059593}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -222,6 +223,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &6059593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6059588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03245c2c14b498f4cbac402576998305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reloadCrosshair: {fileID: 1804310869}
+  normalCrosshair: {fileID: 92102879}
+  weaponIcon: {fileID: 1614828258}
+  weaponNameText: {fileID: 312207896}
+  weaponAmmoText: {fileID: 1200835202}
+  weaponController: {fileID: 1084827335}
 --- !u!1 &92102879
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,7 +754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8867924, g: 0.3530437, b: 0.36839202, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1429,7 +1448,7 @@ GameObject:
   - component: {fileID: 312207897}
   - component: {fileID: 312207896}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: WeaponName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2289,7 +2308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8867924, g: 0.3530437, b: 0.36839202, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3632,6 +3651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAmmo: 30
+  reloadTime: 2
   projectilePrefab: {fileID: 7256616149365897216, guid: 8bbb4be56489f12458fb15660676b964, type: 3}
   shootPoint: {fileID: 161606853}
 --- !u!1 &1200835200
@@ -3646,7 +3666,7 @@ GameObject:
   - component: {fileID: 1200835203}
   - component: {fileID: 1200835202}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: AmmoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4141,6 +4161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAmmo: 7
+  reloadTime: 1.2
   projectilePrefab: {fileID: 7256616149365897216, guid: 8bbb4be56489f12458fb15660676b964, type: 3}
   shootPoint: {fileID: 155416429}
 --- !u!1 &1288599420
@@ -4696,6 +4717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAmmo: 6
+  reloadTime: 4
   projectilePrefab: {fileID: 7256616149365897216, guid: 8bbb4be56489f12458fb15660676b964, type: 3}
   shootPoint: {fileID: 679960256}
   pellets: 10
@@ -5195,7 +5217,7 @@ GameObject:
   - component: {fileID: 1614828259}
   - component: {fileID: 1614828258}
   m_Layer: 5
-  m_Name: Image
+  m_Name: WeaponIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5774,14 +5796,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8867924, g: 0.3530437, b: 0.36839202, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 939a7b5021b47db43a5b938c24c03bc4, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1

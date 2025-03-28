@@ -23,8 +23,11 @@ public class WeaponController : MonoBehaviour
         Weapon previousWeapon = currentWeapon;
 
         if (currentWeapon != null)
+        {
+            if(currentWeapon.IsReloading) 
+                currentWeapon.Reload();
             currentWeapon.gameObject.SetActive(false);
-
+        }
         currentWeapon = weapon;
         currentWeapon.gameObject.SetActive(true);
 
@@ -37,6 +40,11 @@ public class WeaponController : MonoBehaviour
 
         if (currentWeapon.InputFunction("Fire1"))
             currentWeapon.Attack();
+
+        if (Input.GetButtonDown("Reload"))
+        {
+            currentWeapon.Reload();
+        }
 
         if(Input.GetKeyDown(KeyCode.Alpha1))
             SelectWeapon(weapons[0]);
