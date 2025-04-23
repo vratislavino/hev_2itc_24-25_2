@@ -7,6 +7,14 @@ public class TdWaypointProvider : MonoBehaviour
     [SerializeField]
     private List<Transform> waypoints;
 
+    private static TdWaypointProvider instance;
+    public static TdWaypointProvider Instance => instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         if(waypoints == null || waypoints.Count == 0)

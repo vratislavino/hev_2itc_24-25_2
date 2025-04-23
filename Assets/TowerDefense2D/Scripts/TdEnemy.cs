@@ -9,10 +9,6 @@ public class TdEnemy : MonoBehaviour
     [SerializeField]
     private float speed;
 
-    [Obsolete("Use the singleton instead.")]
-    [SerializeField]
-    TdWaypointProvider waypointProvider; // better later
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,7 +18,7 @@ public class TdEnemy : MonoBehaviour
     {
         if(currentWaypoint == null)
         {
-            currentWaypoint = waypointProvider.GetNextWaypoint(currentWaypoint);
+            currentWaypoint = TdWaypointProvider.Instance.GetNextWaypoint(currentWaypoint);
         }
         
         Vector3 direction = (currentWaypoint.position - transform.position).normalized;
@@ -31,7 +27,7 @@ public class TdEnemy : MonoBehaviour
 
         if(Vector2.Distance(transform.position, currentWaypoint.position) < 0.1f)
         {
-            currentWaypoint = waypointProvider.GetNextWaypoint(currentWaypoint);
+            currentWaypoint = TdWaypointProvider.Instance.GetNextWaypoint(currentWaypoint);
         }
     }
 }
