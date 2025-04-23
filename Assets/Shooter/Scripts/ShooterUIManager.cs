@@ -27,12 +27,23 @@ public class ShooterUIManager : MonoBehaviour
     [SerializeField]
     private WeaponController weaponController;
 
+    [SerializeField]
+    private ShoterEnemySpawner spawner;
+
+    [SerializeField]
+    private TMP_Text scoreText;
+
     void Awake()
     {
         weaponController.WeaponChanged += OnWeaponChanged;
-
+        spawner.ScoreChanged += OnScoreChanged;
         normalCrosshair.SetActive(true);
         reloadCrosshair.transform.parent.gameObject.SetActive(false);
+    }
+
+    private void OnScoreChanged(int score)
+    {
+        scoreText.text = $"{score}";
     }
 
     private void OnWeaponChanged(Weapon prev, Weapon curr)

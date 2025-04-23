@@ -56,6 +56,10 @@ public abstract class RangedWeapon : Weapon
     protected virtual void Shoot()
     {
         ChangeAmmo(ammo - 1);
+        if(ammo <= 0)
+        {
+            Reload();
+        }
         SpawnProjectile();
     }
 
