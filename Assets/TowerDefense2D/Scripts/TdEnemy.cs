@@ -30,4 +30,10 @@ public class TdEnemy : MonoBehaviour
             currentWaypoint = TdWaypointProvider.Instance.GetNextWaypoint(currentWaypoint);
         }
     }
+
+    internal void TakeDamage(float damage)
+    {
+        Debug.Log($"Enemy took {damage} damage");
+        Destroy(gameObject);
+    }
 }

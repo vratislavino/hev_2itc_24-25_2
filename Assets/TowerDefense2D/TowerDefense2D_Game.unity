@@ -1054,6 +1054,7 @@ MonoBehaviour:
   - {fileID: 214020489}
   - {fileID: 86485244}
   - {fileID: 1161332039}
+  towerPrefab: {fileID: 5096062401037798709, guid: e97a317c4df42f14aa40e137fa4d9249, type: 3}
 --- !u!1001 &252268696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5714,7 +5715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1739473512}
   prefab: {fileID: 4258464773190620414, guid: e436c0ebbbcb5294294d670476431720, type: 3}
-  spawnInterval: 2
+  spawnInterval: 0.2
 --- !u!1001 &1516272382
 PrefabInstance:
   m_ObjectHideFlags: 0

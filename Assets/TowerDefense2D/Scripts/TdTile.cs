@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class TdTile : MonoBehaviour
@@ -34,7 +35,15 @@ public class TdTile : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Clicked on tile: " + gameObject.name);
+            SpawnTower();
         }
+    }
+
+    private void SpawnTower()
+    {
+        var tower = Instantiate(TdWaypointProvider.Instance.TowerPrefab, transform.position, Quaternion.identity);
+        tower.transform.SetParent(transform);
+        tower.transform.localPosition = Vector3.zero;
+        tower.transform.localScale = Vector3.one;
     }
 }

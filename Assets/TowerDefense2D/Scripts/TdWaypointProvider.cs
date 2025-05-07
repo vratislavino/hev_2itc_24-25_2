@@ -10,6 +10,11 @@ public class TdWaypointProvider : MonoBehaviour
     private static TdWaypointProvider instance;
     public static TdWaypointProvider Instance => instance;
 
+    [SerializeField]
+    private TdOvertimeDamageTower towerPrefab;
+
+    public TdOvertimeDamageTower TowerPrefab => towerPrefab;
+
     private void Awake()
     {
         instance = this;
