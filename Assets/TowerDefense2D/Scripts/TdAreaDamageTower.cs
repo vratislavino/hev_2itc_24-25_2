@@ -4,7 +4,8 @@ public class TdAreaDamageTower : TdOvertimeDamageTower
 {
     protected override void Attack()
     {
-        throw new System.NotImplementedException();
+        if (enemiesInRange.Count > 0)
+            enemiesInRange.ForEach(enemy => DoDamage(enemy));
     }
 
 }

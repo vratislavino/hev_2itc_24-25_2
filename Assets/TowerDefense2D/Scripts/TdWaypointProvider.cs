@@ -10,10 +10,12 @@ public class TdWaypointProvider : MonoBehaviour
     private static TdWaypointProvider instance;
     public static TdWaypointProvider Instance => instance;
 
-    [SerializeField]
-    private TdOvertimeDamageTower towerPrefab;
 
-    public TdOvertimeDamageTower TowerPrefab => towerPrefab;
+    // TODO: complete this MF
+    [SerializeField]
+    private TdTower towerPrefab;
+
+    public TdTower TowerPrefab => towerPrefab;
 
     private void Awake()
     {
@@ -26,6 +28,11 @@ public class TdWaypointProvider : MonoBehaviour
         {
             Debug.LogError("There are no waypoints!");
         }  
+    }
+
+    public void SetTower(TdTower towerPrefab)
+    {
+        this.towerPrefab = towerPrefab;
     }
 
     public Transform GetNextWaypoint(Transform waypoint)

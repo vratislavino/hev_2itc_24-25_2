@@ -33,6 +33,7 @@ public class TdEnemy : MonoBehaviour
 
     internal void TakeDamage(float damage)
     {
+        // TODO: Lets make hp system for enemies 
         Debug.Log($"Enemy took {damage} damage");
         Destroy(gameObject);
     }

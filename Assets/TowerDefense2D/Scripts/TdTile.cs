@@ -41,6 +41,9 @@ public class TdTile : MonoBehaviour
 
     private void SpawnTower()
     {
+        if (TdWaypointProvider.Instance.TowerPrefab == null)
+            return;
+
         var tower = Instantiate(TdWaypointProvider.Instance.TowerPrefab, transform.position, Quaternion.identity);
         tower.transform.SetParent(transform);
         tower.transform.localPosition = Vector3.zero;
